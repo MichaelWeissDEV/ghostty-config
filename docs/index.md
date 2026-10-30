@@ -31,6 +31,7 @@ A minimalist, high-performance **Ghostty** terminal configuration styled in the 
 :caption: User Guide
 
 installation
+packages
 configuration
 keybindings
 faq
@@ -58,25 +59,10 @@ git clone https://github.com/MichaelWeissDEV/ghostty-config.git ~/.config/ghostt
 ghostty
 ```
 
-### In the Arch Dotfiles Repository
+### Managed Arch package
 
-This repository is integrated as a **Git Subtree** at `ghostty/` in `~/git/dotfiles` and linked directly to `~/.config/ghostty`:
-
-```bash
-# Update everything (system, dotfiles & all subtrees):
-adot update
-# (also available as: arch-dot update / arch-dotfiles update)
-
-# Update only the ghostty subtree from upstream:
-adot update ghostty
-
-# Inspect status or terminal keybindings:
-adot status
-adot keys terminals
-
-# Push local changes back to upstream:
-adot push ghostty
-```
+This repository is independent, not embedded in a parent subtree. See
+{doc}`packages` for the one-command installer, signed updates and development.
 
 ---
 

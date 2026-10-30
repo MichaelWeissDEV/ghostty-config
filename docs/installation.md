@@ -2,6 +2,9 @@
 
 This guide walks you through installing the **Ghostty** terminal emulator, securing the required font, and placing this configuration on your system.
 
+For the managed Arch installation with backups and signed updates, see
+{doc}`packages`. The standalone clone below is an alternative, not an extra step.
+
 ---
 
 ## Prerequisites
@@ -59,15 +62,8 @@ git clone https://github.com/MichaelWeissDEV/ghostty-config.git ~/.config/ghostt
 
 ### Route B: As Part of the Arch Dotfiles Hub
 
-If you are using the full [Arch Dotfiles Hub](https://arch-dotfiles.readthedocs.io/en/latest/) (`~/git/dotfiles`), Ghostty is already embedded as a Git Subtree and automatically symlinked to `~/.config/ghostty`:
-
-```bash
-# Link or update via the central CLI program (adot / arch-dot / arch-dotfiles):
-adot links
-adot update ghostty
-# or update the entire ecosystem:
-adot update
-```
+Ghostty is distributed as the independent `arch-dotfiles-ghostty` package.
+See {doc}`packages` for the installer, activation and `pacman -Syu` workflow.
 
 ---
 
@@ -89,10 +85,7 @@ Check the active configuration:
 
 ## Rollback & Uninstall
 
-To remove this configuration:
-
-```bash
-rm -rf ~/.config/ghostty
-# Restore previous backup if applicable:
-[ -d ~/.config/ghostty.bak ] && mv ~/.config/ghostty.bak ~/.config/ghostty
-```
+Package installation: use `arch-dotfiles-config deactivate ghostty` before
+removing the package, as explained in {doc}`packages`. For a standalone clone,
+move it aside and restore your original backup only after reviewing both paths.
+Do not recursively delete an active user configuration to resolve a conflict.
